@@ -1,9 +1,21 @@
 #!/bin/zsh
 function restart_zsh(){
-	echo '[restart_zsh] : cd'
+	dir=$PWD
+	echo
+	echo '[restart_zsh] : Origin directory : '$dir''
+	echo
+	echo '[restart_zsh] : Changing directory to root'
+	echo '==> cd'
+	echo
 	cd
-	echo '[restart_zsh] : source ~/.zshrc'
+	echo '[restart_zsh] : Restarting zshrc'
+	echo '==> source ~/.zshrc'
+	echo
 	source ~/.zshrc
+	echo '[restart_zsh] : Changing directory to origin directory'
+	echo '==> cd '$dir''
+	echo
+	cd $dir
 }
 
 #Aliases
