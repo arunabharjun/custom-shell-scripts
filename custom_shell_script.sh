@@ -1,4 +1,10 @@
 #!/bin/zsh
+function restart_zsh(){
+	echo '[restart_zsh] : cd'
+	cd
+	echo '[restart_zsh] : source ~/.zshrc'
+	source ~/.zshrc
+}
 
 #Aliases
 alias k="kubectl" #kubernetes
@@ -32,8 +38,9 @@ function gtc(){
 }
 
 function gtp(){
-	echo '==> git push -u origin master'
-	git push -u origin master
+	branch="$1"
+	echo '==> git push origin '$branch''
+	git push origin $branch
 }
 
 #start stop mongo service
